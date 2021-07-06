@@ -34,7 +34,7 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Печать" Grid.Column="0" x:Name="ButtonReport"/>
+                    <Button Content="Печать" Grid.Column="0" x:Name="ButtonReport" Click="Report"/>
                     <Button Content="Назад" Click="GoBack"  Grid.Column="2"
                             Style="{StaticResource MaterialDesignOutlinedButton}"/>
                 </Grid>

@@ -38,7 +38,7 @@ namespace Input
 
             typeBox.Text = table.Rows[0][2].ToString();
             descBox.Text = table.Rows[0][3].ToString();
-            priceBox.Text = table.Rows[0][4].ToString();
+            priceBox.Text = String.Format("{0:C}", table.Rows[0][4]);
             statusBox.Text = table.Rows[0][5].ToString();
             progBox.Text = table.Rows[0][6].ToString();
         }
