@@ -23,6 +23,8 @@ namespace Input
         public MainWindow()
         {
             InitializeComponent();
+
+            MainFrame.Content = new Login();
         }
     }
 }

@@ -1,0 +1,42 @@
+﻿<Page x:Class="Input.Register"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Input"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Input">
+
+    <Grid>
+        <Border Background="White" VerticalAlignment="Center" Padding="40,20" MinWidth="400" MaxWidth="600" CornerRadius="15">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" Color="DarkGray" ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <TextBlock Text="Регистрация" HorizontalAlignment="Center" FontSize="40" Style="{StaticResource MaterialDesignCharacterCounterTextBlock}" />
+                <TextBox x:Name="loginBox" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  materialDesign:HintAssist.Hint="Логин" Cursor="IBeam"/>
+                <TextBox x:Name="nameBox" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  materialDesign:HintAssist.Hint="ФИО" Cursor="IBeam"/>
+                <PasswordBox x:Name="firstPassBox" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Пароль"/>
+                <PasswordBox x:Name="secondPassBox" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Подтверждение пароля"/>
+                <StackPanel Orientation="Horizontal" x:Name="RadioButtonFilter" HorizontalAlignment="Center" Margin="20">
+                    <RadioButton GroupName="FiltUser" Content="Клиент" Margin="10 0" Checked="RadioButton_Checked" IsChecked="True"/>
+                    <RadioButton GroupName="FiltUser" Content="Программист" Margin="10 0" Checked="RadioButton_Checked"/>
+                </StackPanel>
+                <Grid Margin="20,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Вход" Grid.Column="0" Click="ButtonLoginGo" Cursor="Hand"/>
+                    <Button Click="Button_Reg_Click" Content="Регистрация" Grid.Column="2" Style="{StaticResource MaterialDesignOutlinedButton}" Cursor="Hand"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+
+        </Grid>
+</Page>
