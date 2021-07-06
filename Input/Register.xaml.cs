@@ -83,6 +83,8 @@ namespace Input
                         stop = true;
                         break;
                     }
+
+
                 }
 
                 if (stop)
@@ -136,8 +138,28 @@ namespace Input
             }
             else
             {
-                nameBox.ToolTip = "";
-                nameBox.Foreground = Brushes.Black;
+                bool stop = false;
+
+                foreach (char x in nameBox.Text)
+                {
+                    if (Char.IsDigit(x))
+                    {
+                        stop = true;
+                        break;
+                    }
+                }
+
+                if (stop)
+                {
+                    isGood = false;
+                    nameBox.ToolTip = "Недопустимый ввод символов!";
+                    nameBox.Foreground = Brushes.Red;
+                }
+                else
+                {
+                    nameBox.ToolTip = "";
+                    nameBox.Foreground = Brushes.Black;
+                }
             }
 
             //Проверка пароля

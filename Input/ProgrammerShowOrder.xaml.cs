@@ -46,7 +46,7 @@ namespace Input
         private void TakeOrder(object sender, RoutedEventArgs e)
         {
             SQLbase.Insert($"update Orders set status = 'Занят' where id = '{Id}'");
-            SQLbase.Insert($"update Orders set programmer = 'Adler' where id = '{Id}'");
+            SQLbase.Insert($"update Orders set programmer = '{Login}' where id = '{Id}'");
 
             ShowInfo();
         }

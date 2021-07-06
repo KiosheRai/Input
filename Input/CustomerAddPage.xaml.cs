@@ -76,16 +76,28 @@ namespace Input
             }
             else
             {
-                if(Convert.ToDecimal(price) <= 0)
+                if(Decimal.TryParse(price, out decimal temp))
                 {
-                    priceBox.ToolTip = "Введите положительный бюджет приложения!";
-                    priceBox.Foreground = Brushes.Red;
+                    if (temp <= 0)
+                    {
+                        isGood = false;
+                        priceBox.ToolTip = "Введите положительный бюджет приложения!";
+                        priceBox.Foreground = Brushes.Red;
+                    }
+                    else
+                    {
+                        priceBox.ToolTip = " ";
+                        priceBox.Foreground = Brushes.Black;
+                    }
                 }
                 else
                 {
-                    priceBox.ToolTip = " ";
-                    priceBox.Foreground = Brushes.Black;
+                    isGood = false;
+                    priceBox.ToolTip = "Неверный формат ввода!";
+                    priceBox.Foreground = Brushes.Red;
                 }
+
+               
             }
 
             if (isGood)

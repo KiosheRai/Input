@@ -91,7 +91,7 @@ namespace Input
             DataRowView i = (DataRowView)listGoods.Items[x];
 
             SQLbase.Insert($"update Orders set status = 'Занят' where id = '{i.Row.ItemArray[0].ToString()}'");
-            SQLbase.Insert($"update Orders set programmer = 'Adler' where id = '{i.Row.ItemArray[0].ToString()}'");
+            SQLbase.Insert($"update Orders set programmer = '{Login}' where id = '{i.Row.ItemArray[0].ToString()}'");
 
             ShowList();
         }
