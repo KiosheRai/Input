@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Input">
 
-    <Grid Background="#d9cece">
+    <Grid>
         <Border Background="White" VerticalAlignment="Center" Padding="20,20" MinWidth="400" MaxWidth="600" CornerRadius="15">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="20" Color="DarkGray" ShadowDepth="0"/>
@@ -43,8 +43,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Добавить" Grid.Column="0" Click="Add" Margin="10"/>
-                    <Button Content="Просмотреть" Grid.Column="1" Click="Show" Margin="10"/>
+                    <Button Content="Добавить" Grid.Column="0" Click="Add" Margin="10" x:Name="ButtonAdd"/>
+                    <Button Content="Просмотреть" Grid.Column="1" Click="Show" Margin="10" x:Name="ButtonShow"/>
                     <Button Content="Удалить" Grid.Column="2" Margin="10"  Click="Delete"
                             x:Name="ButtonDelete" Style="{StaticResource MaterialDesignOutlinedButton}"/>
                 </Grid>

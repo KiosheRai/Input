@@ -32,7 +32,7 @@ namespace Input
 
         private void ShowList()
         {
-            DataTable table = SQLbase.Select($"select id, title, price, status from Orders where customer = N'{Login}'");
+            DataTable table = SQLbase.Select($"select id, title, price, status, programmer from Orders where customer = N'{Login}'");
 
             listGoods.ItemsSource = table.DefaultView;
         }
@@ -74,14 +74,14 @@ namespace Input
 
             if (x == -1)
             {
-                ButtonDelete.ToolTip = "Выберите элемент!";
-                ButtonDelete.Foreground = Brushes.Red;
+                ButtonShow.ToolTip = "Выберите элемент!";
+                ButtonShow.Foreground = Brushes.Red;
                 return;
             }
             else
             {
-                ButtonDelete.ToolTip = "";
-                ButtonDelete.Foreground = Brushes.LightGreen;
+                ButtonShow.ToolTip = "";
+                ButtonShow.Foreground = Brushes.LightGreen;
             }
 
             DataRowView i = (DataRowView)listGoods.Items[x];

@@ -125,11 +125,11 @@ namespace Input
                         table = SQLbase.Select($"select * from Programmer where login = '{login}' and pass = '{password1}'");
                         if (table.Rows.Count > 0)
                         {
-                            MessageBox.Show("Блять");
-                            //Goods s = new Goods(login);
-                            //this.Close();
+                            NavigationService nav;
+                            nav = NavigationService.GetNavigationService(this);
 
-                            //s.Show();
+                            ProgrammerPAge nextPage = new ProgrammerPAge(login);
+                            nav.Navigate(nextPage);
                         }
                         else
                         {
