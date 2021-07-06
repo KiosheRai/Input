@@ -34,8 +34,9 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Занять" Grid.Column="0" Click="TakeOrder"/>
-                    <Button Content="Назад" Click="GoBack"  Grid.Column="2"
+                    <Button Content="Занять" Grid.Column="0" Click="TakeOrder" Margin="10"/>
+                    <Button Content="Отказаться" Grid.Column="1" Click="Remove" Margin="10"/>
+                    <Button Content="Назад" Click="GoBack"  Grid.Column="2" Margin="10"
                             Style="{StaticResource MaterialDesignOutlinedButton}"/>
                 </Grid>
             </StackPanel>

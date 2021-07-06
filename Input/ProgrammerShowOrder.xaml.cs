@@ -59,5 +59,13 @@ namespace Input
             ProgrammerPAge nextPage = new ProgrammerPAge(Login);
             nav.Navigate(nextPage);
         }
+
+        private void Remove(object sender, RoutedEventArgs e)
+        {
+            SQLbase.Insert($"update Orders set status = 'Открытый' where id = '{Id}'");
+            SQLbase.Insert($"update Orders set programmer = null where id = '{Id}'");
+
+            ShowInfo();
+        }
     }
 }
